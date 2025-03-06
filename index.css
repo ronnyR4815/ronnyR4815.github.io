@@ -6,10 +6,12 @@ body {
     text-align: center;
 }
 
-header {
+header h1, header h3{
     background: #333;
     color: #fff;
     padding: 20px;
+    margin: 20px auto;
+    width: 50%;
 }
 
 h2 {
