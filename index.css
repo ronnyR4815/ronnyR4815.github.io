@@ -6,12 +6,19 @@ body {
     text-align: center;
 }
 
-header h1, header h3{
+header {
     background: #333;
     color: #fff;
     padding: 20px;
     margin: 20px auto;
+    width: 100%;
+}
+
+header h1, header h4 {
     width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
 }
 
 h2 {
@@ -37,4 +44,43 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+
+/* Animación inicial del header */
+header {
+    opacity: 0;
+    transform: translateY(-30px); /* Se mueve desde arriba */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Cuando la clase 'visible' se agrega con JS */
+header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación de fade-in para las secciones */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, transform 0.3s ease-in-out;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    background: #f8f8f8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Cuando la sección se vuelve visible */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efecto cuando el usuario pasa el mouse */
+section:hover {
+    transform: scale(1.05); /* Efecto de zoom suave */
+    background: #e0e0e0; /* Cambio de color */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
